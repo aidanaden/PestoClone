@@ -8,20 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		30C4CCCD1F4426AC001F467E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCCC1F4426AC001F467E /* AppDelegate.swift */; };
-		30C4CCCF1F4426AC001F467E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCCE1F4426AC001F467E /* ViewController.swift */; };
-		30C4CCD21F4426AC001F467E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C4CCD01F4426AC001F467E /* Main.storyboard */; };
+		30C4CCCF1F4426AC001F467E /* PestoFlexibleHeaderContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCCE1F4426AC001F467E /* PestoFlexibleHeaderContainerViewController.swift */; };
 		30C4CCD41F4426AC001F467E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C4CCD31F4426AC001F467E /* Assets.xcassets */; };
 		30C4CCD71F4426AC001F467E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C4CCD51F4426AC001F467E /* LaunchScreen.storyboard */; };
+		30C4CCDF1F442860001F467E /* PestoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCDE1F442860001F467E /* PestoCollectionViewController.swift */; };
+		30C4CCE11F442AB5001F467E /* PestoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCE01F442AB5001F467E /* PestoContentView.swift */; };
+		30C4CCE31F442CAB001F467E /* PestoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCE21F442CAB001F467E /* PestoCollectionViewCell.swift */; };
+		30C4CCE51F442FCE001F467E /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30C4CCE41F442FCE001F467E /* AbrilFatface-Regular.ttf */; };
+		30C4CCE81F44310F001F467E /* PestoInkOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCE71F44310F001F467E /* PestoInkOverlay.swift */; };
+		30C4CCEA1F446835001F467E /* PestoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCE91F446835001F467E /* PestoData.swift */; };
+		30C4CCEE1F45EE8B001F467E /* PestoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCED1F45EE8B001F467E /* PestoDetailViewController.swift */; };
+		30C4CCF21F46A850001F467E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4CCF11F46A850001F467E /* Extensions.swift */; };
+		5CD991BFB157650C72069078 /* Pods_PestoClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A593B3D7AB6AE526D3801D6 /* Pods_PestoClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30C4CCC91F4426AC001F467E /* PestoClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PestoClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C4CCCC1F4426AC001F467E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		30C4CCCE1F4426AC001F467E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		30C4CCD11F4426AC001F467E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30C4CCCE1F4426AC001F467E /* PestoFlexibleHeaderContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestoFlexibleHeaderContainerViewController.swift; sourceTree = "<group>"; };
 		30C4CCD31F4426AC001F467E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30C4CCD61F4426AC001F467E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30C4CCD81F4426AC001F467E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30C4CCDE1F442860001F467E /* PestoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PestoCollectionViewController.swift; sourceTree = "<group>"; };
+		30C4CCE01F442AB5001F467E /* PestoContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PestoContentView.swift; sourceTree = "<group>"; };
+		30C4CCE21F442CAB001F467E /* PestoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PestoCollectionViewCell.swift; sourceTree = "<group>"; };
+		30C4CCE41F442FCE001F467E /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		30C4CCE71F44310F001F467E /* PestoInkOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PestoInkOverlay.swift; sourceTree = "<group>"; };
+		30C4CCE91F446835001F467E /* PestoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PestoData.swift; sourceTree = "<group>"; };
+		30C4CCED1F45EE8B001F467E /* PestoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PestoDetailViewController.swift; sourceTree = "<group>"; };
+		30C4CCF11F46A850001F467E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4EA27956D6A95C0FD5B771C3 /* Pods-PestoClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestoClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-PestoClone/Pods-PestoClone.release.xcconfig"; sourceTree = "<group>"; };
+		5A593B3D7AB6AE526D3801D6 /* Pods_PestoClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PestoClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		961103C894A27C7210F792C6 /* Pods-PestoClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestoClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PestoClone/Pods-PestoClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD991BFB157650C72069078 /* Pods_PestoClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				30C4CCCB1F4426AC001F467E /* PestoClone */,
-				30C4CCCA1F4426AC001F467E /* Products */,
+				52C5F09AFB4AA13FDEDF2657 /* Pods */,
+				A12DFE8CDE4E9F95DD13D1FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,19 +69,53 @@
 				30C4CCC91F4426AC001F467E /* PestoClone.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		30C4CCCB1F4426AC001F467E /* PestoClone */ = {
 			isa = PBXGroup;
 			children = (
+				30C4CCE61F442FD4001F467E /* Resources */,
 				30C4CCCC1F4426AC001F467E /* AppDelegate.swift */,
-				30C4CCCE1F4426AC001F467E /* ViewController.swift */,
-				30C4CCD01F4426AC001F467E /* Main.storyboard */,
+				30C4CCCE1F4426AC001F467E /* PestoFlexibleHeaderContainerViewController.swift */,
+				30C4CCDE1F442860001F467E /* PestoCollectionViewController.swift */,
+				30C4CCE21F442CAB001F467E /* PestoCollectionViewCell.swift */,
+				30C4CCE01F442AB5001F467E /* PestoContentView.swift */,
+				30C4CCE71F44310F001F467E /* PestoInkOverlay.swift */,
+				30C4CCE91F446835001F467E /* PestoData.swift */,
+				30C4CCED1F45EE8B001F467E /* PestoDetailViewController.swift */,
+				30C4CCF11F46A850001F467E /* Extensions.swift */,
+				30C4CCCA1F4426AC001F467E /* Products */,
 				30C4CCD31F4426AC001F467E /* Assets.xcassets */,
 				30C4CCD51F4426AC001F467E /* LaunchScreen.storyboard */,
 				30C4CCD81F4426AC001F467E /* Info.plist */,
 			);
 			path = PestoClone;
+			sourceTree = "<group>";
+		};
+		30C4CCE61F442FD4001F467E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30C4CCE41F442FCE001F467E /* AbrilFatface-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		52C5F09AFB4AA13FDEDF2657 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				961103C894A27C7210F792C6 /* Pods-PestoClone.debug.xcconfig */,
+				4EA27956D6A95C0FD5B771C3 /* Pods-PestoClone.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A12DFE8CDE4E9F95DD13D1FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A593B3D7AB6AE526D3801D6 /* Pods_PestoClone.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30C4CCDB1F4426AC001F467E /* Build configuration list for PBXNativeTarget "PestoClone" */;
 			buildPhases = (
+				768C4F0B11E391EAA428F4D5 /* [CP] Check Pods Manifest.lock */,
 				30C4CCC51F4426AC001F467E /* Sources */,
 				30C4CCC61F4426AC001F467E /* Frameworks */,
 				30C4CCC71F4426AC001F467E /* Resources */,
+				B9F74021DA937E2B3F1D89DF /* [CP] Embed Pods Frameworks */,
+				BD6A81CC6FEEF060DF4054D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,35 +181,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C4CCE51F442FCE001F467E /* AbrilFatface-Regular.ttf in Resources */,
 				30C4CCD71F4426AC001F467E /* LaunchScreen.storyboard in Resources */,
 				30C4CCD41F4426AC001F467E /* Assets.xcassets in Resources */,
-				30C4CCD21F4426AC001F467E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		768C4F0B11E391EAA428F4D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B9F74021DA937E2B3F1D89DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PestoClone/Pods-PestoClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD6A81CC6FEEF060DF4054D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PestoClone/Pods-PestoClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30C4CCC51F4426AC001F467E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30C4CCCF1F4426AC001F467E /* ViewController.swift in Sources */,
+				30C4CCDF1F442860001F467E /* PestoCollectionViewController.swift in Sources */,
+				30C4CCF21F46A850001F467E /* Extensions.swift in Sources */,
+				30C4CCEA1F446835001F467E /* PestoData.swift in Sources */,
+				30C4CCE81F44310F001F467E /* PestoInkOverlay.swift in Sources */,
+				30C4CCCF1F4426AC001F467E /* PestoFlexibleHeaderContainerViewController.swift in Sources */,
+				30C4CCE11F442AB5001F467E /* PestoContentView.swift in Sources */,
 				30C4CCCD1F4426AC001F467E /* AppDelegate.swift in Sources */,
+				30C4CCE31F442CAB001F467E /* PestoCollectionViewCell.swift in Sources */,
+				30C4CCEE1F45EE8B001F467E /* PestoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		30C4CCD01F4426AC001F467E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30C4CCD11F4426AC001F467E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		30C4CCD51F4426AC001F467E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -259,6 +363,7 @@
 		};
 		30C4CCDC1F4426AC001F467E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 961103C894A27C7210F792C6 /* Pods-PestoClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T8EK39XC68;
@@ -272,6 +377,7 @@
 		};
 		30C4CCDD1F4426AC001F467E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EA27956D6A95C0FD5B771C3 /* Pods-PestoClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = T8EK39XC68;
@@ -302,6 +408,7 @@
 				30C4CCDD1F4426AC001F467E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
