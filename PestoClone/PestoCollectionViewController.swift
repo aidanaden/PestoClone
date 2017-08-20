@@ -86,22 +86,22 @@ class PestoCollectionViewController: UICollectionViewController {
         
         let scrollContentOffsetY = scrollView.contentOffset.y
         self.logoScale = scrollContentOffsetY / -((self.view.frame.width - 24)*1.1)
+        print(self.logoScale)
         
         if self.logoScale! < CGFloat(0.5) {
             self.logoScale = 0.5
             
-            UIView.animate(withDuration: 0.33, delay: 0, options: .curveEaseOut, animations: {
-                self.headerContentView.bigLogo.layer.opacity  = 0
+            UIView.animate(withDuration: 0.25, animations: {
+                self.headerContentView.bigLogo.layer.opacity = 0
                 self.headerContentView.smallLogo.layer.opacity = 1
-            }) { (completed) in
-            }
+            })
+            
         } else {
             
-            UIView.animate(withDuration: 0.33, delay: 0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 self.headerContentView.bigLogo.layer.opacity = 1
                 self.headerContentView.smallLogo.layer.opacity = 0
-            }) { (completed) in
-            }
+            })
         }
         
         self.headerContentView.bigLogo.transform = CGAffineTransform(scaleX: logoScale!, y: logoScale!)

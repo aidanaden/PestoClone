@@ -104,7 +104,7 @@ class PestoCollectionViewCell: UICollectionViewCell {
         creatorLbl.text = author
         
         imageView.heroID = "\(imageFileName)_image"
-        imageView.heroModifiers = [.duration(0.1), .delay(0)]
+        imageView.heroModifiers = [.duration(0.25), .delay(0)]
 //        nameLbl.heroID = "\(title)_lbl"
 //        nameLbl.heroModifiers = [.zPosition(4)]
 //        creatorLbl.heroID = "\(author)_lbl"
