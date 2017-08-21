@@ -20,8 +20,8 @@ class PestoHeaderContentView: UIView {
         super.init(frame: frame)
         
         backgroundColor = UIColor.init(red: 0, green: 0.67, blue: 0.55, alpha: 1)
-        
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         addSubview(bigLogo)
         addSubview(smallLogo)
     }

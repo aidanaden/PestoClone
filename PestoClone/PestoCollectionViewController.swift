@@ -89,7 +89,7 @@ class PestoCollectionViewController: UICollectionViewController {
         print(self.logoScale)
         
         if self.logoScale! < CGFloat(0.5) {
-            self.logoScale = 0.5
+//            self.logoScale = 0.5
             
             UIView.animate(withDuration: 0.25, animations: {
                 self.headerContentView.bigLogo.layer.opacity = 0
@@ -104,7 +104,12 @@ class PestoCollectionViewController: UICollectionViewController {
             })
         }
         
-        self.headerContentView.bigLogo.transform = CGAffineTransform(scaleX: logoScale!, y: logoScale!)
+        if self.logoScale! <= CGFloat(0.2) {
+            self.logoScale = 0.2
+        }
+        
+        let padding: CGFloat = 1 - 0.777000777000777
+        self.headerContentView.bigLogo.transform = CGAffineTransform(scaleX: logoScale! + padding, y: logoScale! + padding)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,7 +133,7 @@ class PestoCollectionViewController: UICollectionViewController {
         let headerView = headerViewController.headerView
         let bounds = UIScreen.main.bounds
         if bounds.size.width < bounds.size.height {
-            headerView.maximumHeight = 320
+            headerView.maximumHeight = 300
         } else {
             headerView.maximumHeight = 72
         }
