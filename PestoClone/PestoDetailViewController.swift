@@ -67,12 +67,14 @@ class PestoDetailViewController: UIViewController {
         
         view.addSubview(topContainerView)
         view.addSubview(bottomContainerView)
-        view.addSubview(titleLbl)
-        view.addSubview(descriptionLbl)
+//        view.addSubview(titleLbl)
+//        view.addSubview(descriptionLbl)
         
         isHeroEnabled = true
+//        heroModalAnimationType = .selectBy(presenting: .auto, dismissing: .uncover(direction: .down))
         backBtn.heroID = "Back"
         backBtn.heroModifiers = [.fade]
+        
         
 //        _ = topContainerView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
         
@@ -108,6 +110,9 @@ class PestoDetailViewController: UIViewController {
         imageView.image = image
         imageView.heroID = "\(imageName)_image"
         imageView.heroModifiers = [.duration(0.25), .delay(0)]
+        
+        bottomContainerView.heroID = "\(imageName)_BottomContent"
+        bottomContainerView.heroModifiers = [.duration(0.25), .delay(0)]
 //        titleLbl.text = title
 //        titleLbl.heroID = "\(title)_lbl"
 //        titleLbl.heroModifiers = [.zPosition(4)]

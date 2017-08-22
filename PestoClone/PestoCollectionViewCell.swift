@@ -21,7 +21,7 @@ class PestoCollectionViewCell: UICollectionViewCell {
     fileprivate var nameLbl = UILabel()
     fileprivate var creatorLbl = UILabel()
     fileprivate var pestoInkOverlay = PestoInkOverlay()
-    
+    fileprivate var bottomContentView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +35,10 @@ class PestoCollectionViewCell: UICollectionViewCell {
         cellContent.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         cellContent.backgroundColor = .white
         cellContent.clipsToBounds = true
+        
+        bottomContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        bottomContentView.backgroundColor = .white
+        cellContent.addSubview(bottomContentView)
         
         nameLbl.lineBreakMode = .byWordWrapping
         nameLbl.font = MDCTypography.headlineFont().withSize(26)
@@ -54,7 +58,7 @@ class PestoCollectionViewCell: UICollectionViewCell {
         cellContent.addSubview(imageView)
         
         iconImageView.clipsToBounds = true
-//        iconImageView.backgroundColor = .blue
+        iconImageView.backgroundColor = .blue
         cellContent.addSubview(iconImageView)
         
         pestoInkOverlay.frame = bounds
@@ -72,6 +76,8 @@ class PestoCollectionViewCell: UICollectionViewCell {
         addSubview(cellContent)
         
         imageView.frame = CGRect(x: 0, y: 0, width: cellContent.frame.width, height: cellContent.frame.height * 3/4)
+        
+        bottomContentView.frame = CGRect(x: 0, y: imageView.frame.height, width: cellContent.frame.width, height: cellContent.frame.height - imageView.frame.height)
         
         let avatarDim: CGFloat = 52
         iconImageView.frame = CGRect(x: 24, y: frame.height - avatarDim * 3/2 + 5, width: avatarDim, height: avatarDim)
@@ -105,6 +111,9 @@ class PestoCollectionViewCell: UICollectionViewCell {
         
         imageView.heroID = "\(imageFileName)_image"
         imageView.heroModifiers = [.duration(0.25), .delay(0)]
+        
+        bottomContentView.heroID = "\(imageFileName)_BottomContent"
+        bottomContentView.heroModifiers = [.duration(0.25), .delay(0)]
 //        nameLbl.heroID = "\(title)_lbl"
 //        nameLbl.heroModifiers = [.zPosition(4)]
 //        creatorLbl.heroID = "\(author)_lbl"
