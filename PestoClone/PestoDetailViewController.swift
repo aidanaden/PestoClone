@@ -13,7 +13,7 @@ import Hero
 
 class PestoDetailViewController: UIViewController {
     
-    fileprivate let imageView: UIImageView = {
+    let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
@@ -21,42 +21,39 @@ class PestoDetailViewController: UIViewController {
         return iv
     }()
     
-    fileprivate let bottomContainerView: UIView = {
+    let bottomContainerView: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = .white
         containerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         return containerView
     }()
     
-    fileprivate let titleLbl: UILabel = {
+    let titleLbl: UILabel = {
         let title = UILabel()
         title.lineBreakMode = .byWordWrapping
         title.numberOfLines = 1
-        title.font = MDCTypography.headlineFont()
+        title.font = MDCTypography.headlineFont().withSize(28)
         title.textColor = UIColor.init(white: 0, alpha: 0.87)
         title.alpha = MDCTypography.headlineFontOpacity()
         return title
     }()
     
-    fileprivate let descriptionLbl: UILabel = {
-        let descLabel = UILabel()
-        descLabel.numberOfLines = 8
-        descLabel.lineBreakMode = .byWordWrapping
-        descLabel.font = MDCTypography.body1Font()
-        descLabel.alpha = MDCTypography.body1FontOpacity()
-        descLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return descLabel
+    let descriptionTextView: UITextView = {
+        let descTv = UITextView()
+        descTv.font = MDCTypography.body1Font()
+        descTv.alpha = MDCTypography.body1FontOpacity()
+        return descTv
     }()
     
-    fileprivate let topContainerView: UIView = {
+    let topContainerView: UIView = {
         let containerView = UIView()
         containerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         return containerView
     }()
     
-    fileprivate lazy var backBtn: UIButton = {
+    lazy var backBtn: UIButton = {
         let backButton = UIButton()
-        backButton.setTitle("Back", for: .normal)
+        backButton.setImage(#imageLiteral(resourceName: "Back"), for: .normal)
         backButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         return backButton
     }()
@@ -65,10 +62,14 @@ class PestoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        topContainerView.addSubview(imageView)
+        topContainerView.addSubview(backBtn)
+        
+        bottomContainerView.addSubview(titleLbl)
+        bottomContainerView.addSubview(descriptionTextView)
+        
         view.addSubview(topContainerView)
         view.addSubview(bottomContainerView)
-//        view.addSubview(titleLbl)
-//        view.addSubview(descriptionLbl)
         
         isHeroEnabled = true
 //        heroModalAnimationType = .selectBy(presenting: .auto, dismissing: .uncover(direction: .down))
@@ -76,29 +77,23 @@ class PestoDetailViewController: UIViewController {
         backBtn.heroModifiers = [.fade]
         
         
-//        _ = topContainerView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
-        
-        topContainerView.addSubview(imageView)
-        topContainerView.addSubview(backBtn)
-        
-        bottomContainerView.addSubview(titleLbl)
-        bottomContainerView.addSubview(descriptionLbl)
-        
-//        _ = backBtn.anchor(topContainerView.topAnchor, left: topContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 15, leftConstant: 15, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
-//        
-//        imageView.frame = topContainerView.frame
-        
+    
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         topContainerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width + 50, height: view.bounds.height / 2 + 100)
+        bottomContainerView.frame = CGRect(x: 0, y: topContainerView.frame.height, width: view.bounds.width, height: view.bounds.height - topContainerView.frame.height)
+        
         imageView.frame = topContainerView.frame
         
-        backBtn.frame = CGRect(x: 12, y: 12, width: 50, height: 50)
+        _ = backBtn.anchor(topContainerView.topAnchor, left: topContainerView.leftAnchor, bottom: nil, right: nil, topConstant: 25, leftConstant: 5, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
         
-        bottomContainerView.frame = CGRect(x: 0, y: topContainerView.frame.height, width: view.bounds.width, height: view.bounds.height - topContainerView.frame.height)
+//        titleLbl.frame = CGRect(x: 20, y: topContainerView.frame.height + 20, width: view.bounds.width, height: 44)
+        _ = titleLbl.anchor(bottomContainerView.topAnchor, left: bottomContainerView.leftAnchor, bottom: nil, right: bottomContainerView.rightAnchor, topConstant: 10, leftConstant: 80, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 52)
+        
+        _ = descriptionTextView.anchor(titleLbl.bottomAnchor, left: bottomContainerView.leftAnchor, bottom: nil, right: bottomContainerView.rightAnchor, topConstant: 0, leftConstant: 80, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 100)
     }
     
     func dismissView() {
@@ -107,16 +102,20 @@ class PestoDetailViewController: UIViewController {
     
     func setupViews(image: UIImage, imageName: String, title: String, description: String, author: String) {
         
+        print(description)
         imageView.image = image
         imageView.heroID = "\(imageName)_image"
-        imageView.heroModifiers = [.duration(0.25), .delay(0)]
+        imageView.heroModifiers = [.duration(0.2), .delay(0)]
         
         bottomContainerView.heroID = "\(imageName)_BottomContent"
-        bottomContainerView.heroModifiers = [.duration(0.25), .delay(0)]
-//        titleLbl.text = title
+        bottomContainerView.heroModifiers = [.duration(0.2), .delay(0)]
+        
+        titleLbl.text = title
+        print(title)
 //        titleLbl.heroID = "\(title)_lbl"
+//        titleLbl.heroModifiers = [.duration(0.25), .delay(0), .zPosition(CGFloat(2))]
 //        titleLbl.heroModifiers = [.zPosition(4)]
-//        descriptionLbl.text = description
+        descriptionTextView.text = description
 //        descriptionLbl.heroID = "\(author)_lbl"
 //        descriptionLbl.heroModifiers = [.zPosition(4)]
     }

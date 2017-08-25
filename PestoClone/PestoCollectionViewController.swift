@@ -13,14 +13,20 @@ class PestoCollectionViewController: UICollectionViewController {
     
     var headerViewController: MDCFlexibleHeaderViewController!
     let headerContentView = PestoHeaderContentView(frame: CGRect.zero)
+    let kPestoAnimationDuration: CGFloat = 0.33
     var pestoData: PestoData!
     var logoScale: CGFloat?
+    
+    var zoomableView = UIImageView()
+    var zoomableCardView = UIView()
     
     private let cellId = "PestoCollectionViewCellId"
     
     override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
         self.pestoData = PestoData()
+        zoomableView.frame = CGRect.zero
+        zoomableCardView.frame = CGRect.zero
         
         self.collectionView?.backgroundColor = UIColor.init(white: 0.92, alpha: 1)
         self.collectionView?.register(PestoCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
@@ -139,7 +145,6 @@ class PestoCollectionViewController: UICollectionViewController {
         }
         headerView.minimumHeight = 72
     }
-    
     
 }
 

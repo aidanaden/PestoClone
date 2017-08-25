@@ -39,7 +39,7 @@ class PestoData {
     // The following string concatenations are deliberate and introduced by clang-format.
     
     let descriptions = [
-    "Bask in greens this season by trying this delightful take on traditional bruschetta. Top ",
+    "Bask in greens this season by trying this delightful take on traditional bruschetta.",
     "with a dollop of homemade pesto, and season with freshly ground sea salt and pepper.",
     "Abundant in color, and healthy, delicious goodness, cooking with these South American purple ",
     "potatoes is a treat. Boil, mash, bake, or roast them. For taste cook with chicken stock, ",
