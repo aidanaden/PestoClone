@@ -75,11 +75,12 @@ class PestoCollectionViewController: UICollectionViewController {
     func setupHeaderView() {
         
         let header = headerViewController.headerView
+        header.heroID = "NavBar"
+        header.heroModifiers = [.useGlobalCoordinateSpace, .forceAnimate]
         header.backgroundColor = .white
         header.maximumHeight = 320
         header.minimumHeight = 72
         header.trackingScrollView = collectionView
-        header.shadowLayer = CALayer()
         header.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         headerContentView.frame = header.frame

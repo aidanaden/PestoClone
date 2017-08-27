@@ -23,13 +23,13 @@ class PestoCollectionViewCell: UICollectionViewCell {
     var pestoInkOverlay = PestoInkOverlay()
     var bottomContentView = UIView()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
-//        let shadowLayer = layer as! MDCShadowLayer
-//        shadowLayer.elevation = MDCShadowElevationCardResting
-//        shadowLayer.isShadowMaskEnabled = false
+        let shadowLayer = layer as! MDCShadowLayer
+        shadowLayer.elevation = MDCShadowElevationCardResting
+        shadowLayer.isShadowMaskEnabled = false
         
         cellContent.frame = bounds
         cellContent.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -105,6 +105,9 @@ class PestoCollectionViewCell: UICollectionViewCell {
     
     func populateCell(imageFileName: String, title: String, author: String) {
         
+        let materialCurve = MDCAnimationTimingFunction.easeInOut
+        let timingFunction = CAMediaTimingFunction.mdc_function(withType: materialCurve)
+        
         let baseUrl = PestoData().pestoBaseUrl + imageFileName
         if let imageUrl = URL(string: baseUrl) {
             imageView.sd_setImage(with: imageUrl)
@@ -114,14 +117,14 @@ class PestoCollectionViewCell: UICollectionViewCell {
         creatorLbl.text = author
         
         imageView.heroID = "\(imageFileName)_image"
-        imageView.heroModifiers = [.duration(0.2), .delay(0)]
+        imageView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!)]
         
         bottomContentView.heroID = "\(imageFileName)_BottomContent"
-        bottomContentView.heroModifiers = [.duration(0.2), .delay(0)]
+        bottomContentView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!)]
         nameLbl.heroID = "\(title)_lbl"
-        nameLbl.heroModifiers = [.duration(0.2), .delay(0), .fade]
+        nameLbl.heroModifiers = [.duration(0.25), .delay(0), .fade, .useOptimizedSnapshot]
         creatorLbl.heroID = "\(author)_lbl"
-        creatorLbl.heroModifiers = [.duration(0.2), .delay(0), .fade]
+        creatorLbl.heroModifiers = [.duration(0.25), .delay(0), .fade, .useOptimizedSnapshot]
     }
 
 }

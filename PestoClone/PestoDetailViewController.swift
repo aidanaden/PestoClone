@@ -58,7 +58,6 @@ class PestoDetailViewController: UIViewController {
         return backButton
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,12 +71,11 @@ class PestoDetailViewController: UIViewController {
         view.addSubview(bottomContainerView)
         
         isHeroEnabled = true
-//        heroModalAnimationType = .selectBy(presenting: .auto, dismissing: .uncover(direction: .down))
+        heroModalAnimationType = .selectBy(presenting: .auto, dismissing: .uncover(direction: .down))
+        
         backBtn.heroID = "Back"
         backBtn.heroModifiers = [.fade]
         
-        
-    
     }
     
     override func viewWillLayoutSubviews() {
@@ -93,7 +91,7 @@ class PestoDetailViewController: UIViewController {
 //        titleLbl.frame = CGRect(x: 20, y: topContainerView.frame.height + 20, width: view.bounds.width, height: 44)
         _ = titleLbl.anchor(bottomContainerView.topAnchor, left: bottomContainerView.leftAnchor, bottom: nil, right: bottomContainerView.rightAnchor, topConstant: 10, leftConstant: 80, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 52)
         
-        _ = descriptionTextView.anchor(titleLbl.bottomAnchor, left: bottomContainerView.leftAnchor, bottom: nil, right: bottomContainerView.rightAnchor, topConstant: 0, leftConstant: 80, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 100)
+        _ = descriptionTextView.anchor(titleLbl.bottomAnchor, left: bottomContainerView.leftAnchor, bottom: nil, right: bottomContainerView.rightAnchor, topConstant: 0, leftConstant: 78, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 100)
     }
     
     func dismissView() {
@@ -102,20 +100,25 @@ class PestoDetailViewController: UIViewController {
     
     func setupViews(image: UIImage, imageName: String, title: String, description: String, author: String) {
         
-        print(description)
+        let materialCurve = MDCAnimationTimingFunction.easeInOut
+        let timingFunction = CAMediaTimingFunction.mdc_function(withType: materialCurve)
+        
         imageView.image = image
+        titleLbl.text = title
+        descriptionTextView.text = description
+        
         imageView.heroID = "\(imageName)_image"
-        imageView.heroModifiers = [.duration(0.2), .delay(0)]
+        imageView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!
+            )]
         
         bottomContainerView.heroID = "\(imageName)_BottomContent"
-        bottomContainerView.heroModifiers = [.duration(0.2), .delay(0)]
+        bottomContainerView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!)]
         
-        titleLbl.text = title
-        print(title)
+        
 //        titleLbl.heroID = "\(title)_lbl"
 //        titleLbl.heroModifiers = [.duration(0.25), .delay(0), .zPosition(CGFloat(2))]
 //        titleLbl.heroModifiers = [.zPosition(4)]
-        descriptionTextView.text = description
+        
 //        descriptionLbl.heroID = "\(author)_lbl"
 //        descriptionLbl.heroModifiers = [.zPosition(4)]
     }
