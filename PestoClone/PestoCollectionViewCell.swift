@@ -117,14 +117,14 @@ class PestoCollectionViewCell: UICollectionViewCell {
         creatorLbl.text = author
         
         imageView.heroID = "\(imageFileName)_image"
-        imageView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!)]
+        imageView.heroModifiers = [.duration(0.225), .delay(0), .timingFunction(timingFunction!)]
         
         bottomContentView.heroID = "\(imageFileName)_BottomContent"
-        bottomContentView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!)]
+        bottomContentView.heroModifiers = [.duration(0.225), .delay(0), .timingFunction(timingFunction!)]
         nameLbl.heroID = "\(title)_lbl"
-        nameLbl.heroModifiers = [.duration(0.25), .delay(0), .fade, .useOptimizedSnapshot]
+        nameLbl.heroModifiers = [.delay(0), .fade]
         creatorLbl.heroID = "\(author)_lbl"
-        creatorLbl.heroModifiers = [.duration(0.25), .delay(0), .fade, .useOptimizedSnapshot]
+        creatorLbl.heroModifiers = [.delay(0), .fade]
     }
 
 }

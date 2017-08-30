@@ -10,6 +10,13 @@ import UIKit
 import MaterialComponents
 import Hero
 
+class shadowButton: UIButton {
+    
+    override class var layerClass: AnyClass {
+        return MDCShadowLayer.self
+    }
+}
+
 
 class PestoDetailViewController: UIViewController {
     
@@ -42,6 +49,8 @@ class PestoDetailViewController: UIViewController {
         let descTv = UITextView()
         descTv.font = MDCTypography.body1Font()
         descTv.alpha = MDCTypography.body1FontOpacity()
+        descTv.isEditable = false
+        descTv.isSelectable = false
         return descTv
     }()
     
@@ -51,8 +60,8 @@ class PestoDetailViewController: UIViewController {
         return containerView
     }()
     
-    lazy var backBtn: UIButton = {
-        let backButton = UIButton()
+    lazy var backBtn: shadowButton = {
+        let backButton = shadowButton()
         backButton.setImage(#imageLiteral(resourceName: "Back"), for: .normal)
         backButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         return backButton
@@ -60,6 +69,10 @@ class PestoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
         
         topContainerView.addSubview(imageView)
         topContainerView.addSubview(backBtn)
@@ -71,10 +84,7 @@ class PestoDetailViewController: UIViewController {
         view.addSubview(bottomContainerView)
         
         isHeroEnabled = true
-        heroModalAnimationType = .selectBy(presenting: .auto, dismissing: .uncover(direction: .down))
-        
-        backBtn.heroID = "Back"
-        backBtn.heroModifiers = [.fade]
+//        heroModalAnimationType = .selectBy(presenting: .auto, dismissing: .uncover(direction: .down))
         
     }
     
@@ -98,6 +108,10 @@ class PestoDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func setupViews(image: UIImage, imageName: String, title: String, description: String, author: String) {
         
         let materialCurve = MDCAnimationTimingFunction.easeInOut
@@ -108,12 +122,18 @@ class PestoDetailViewController: UIViewController {
         descriptionTextView.text = description
         
         imageView.heroID = "\(imageName)_image"
-        imageView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!
-            )]
+        imageView.heroModifiers = [.duration(0.225), .delay(0), .timingFunction(timingFunction!)]
         
         bottomContainerView.heroID = "\(imageName)_BottomContent"
-        bottomContainerView.heroModifiers = [.duration(0.25), .delay(0), .timingFunction(timingFunction!)]
+        bottomContainerView.heroModifiers = [.duration(0.225), .delay(0), .timingFunction(timingFunction!)]
         
+        backBtn.heroID = "Back"
+        backBtn.heroModifiers = [.delay(0.07), .fade]
+        
+        titleLbl.heroID = "\(title)_lbl_2"
+        titleLbl.heroModifiers = [.delay(0), .fade]
+        descriptionTextView.heroID = "\(author)_lbl_2"
+        descriptionTextView.heroModifiers = [.delay(0), .fade]
         
 //        titleLbl.heroID = "\(title)_lbl"
 //        titleLbl.heroModifiers = [.duration(0.25), .delay(0), .zPosition(CGFloat(2))]
